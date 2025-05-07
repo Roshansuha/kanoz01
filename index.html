@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+</head>
+
+<body>
+    <!-- Header Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="logo">Kanoz</div>
+
+            <!-- Navigation Links -->
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">Collections</a>
+                <a href="#">Sale</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <!-- Hamburger Menu for Mobile -->
+            <i class="fas fa-bars hamburger" id="hamburgerIcon"></i>
+
+            <!-- Right Section: Icons -->
+            <div class="nav-right">
+                <div class="search-box" id="searchBox">
+                    <input type="text" class="search-input" placeholder="Search..." />
+                    <i class="fas fa-search search-icon" id="searchIcon"></i>
+                </div>
+                <i class="fas fa-heart icon" title="Wishlist"></i>
+                <i class="fas fa-shopping-cart icon" title="Cart"></i>
+
+                <div class="account-wrapper">
+                    <i class="fas fa-user icon" title="Account"></i>
+                    <div class="dropdown">
+                        <a href="#">Login</a>
+                        <a href="#">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Hero Images Slider -->
+        <div class="hero-slider">
+            <div class="hero-images">
+                <img src="./image/hero.jpeg" alt="Hero Image 1" />
+                <img src="./image/hero2.jpeg" alt="Hero Image 2" />
+                <img src="./image/hero 3.jpg" alt="Hero Image 3" />
+                <img src="./image/hero.jpeg" alt="Hero Image 4" />
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+
+        <!-- Hero Content: Slogan + Button -->
+        <div class="hero-content">
+            <h1 id="slogan">Welcome to StyleStore</h1>
+            <button class="cta-button">Shop Now</button>
+        </div>
+    </section>
+
+    <section class="collections">
+        <h2 class="section-title">Featured Collections</h2>
+        <div class="collection-grid">
+            <!-- Summer Collection -->
+            <div class="collection-card">
+                <img src="./image/f 3.jpg" alt="Summer" />
+                <div class="overlay">
+                    <h3>Summer</h3>
+                    <button class="quick-view">Quick View</button>
+                </div>
+            </div>
+
+            <!-- Streetwear Icons -->
+            <div class="collection-card">
+                <img src="./image/f 1.jpg" alt="Streetwear" />
+                <div class="overlay">
+                    <h3>Streetwear </h3>
+                    <button class="quick-view">Quick View</button>
+                </div>
+            </div>
+
+            <!-- Luxury Edits -->
+            <div class="collection-card">
+                <img src="./image/f 2.jpg" alt="Luxury " />
+                <div class="overlay">
+                    <h3>Luxury </h3>
+                    <button class="quick-view">Quick View</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="new-arrivals">
+        <h2 class="section-title">🆕 New Arrivals / Trending</h2>
+        <div class="scroll-wrapper">
+            <div class="product-track" id="productTrack">
+
+                <!-- Product Card -->
+                <div class="product-card">
+                    <img src="/image/product1.jpg" alt="Product 1" />
+                    <h3>Denim Jacket</h3>
+                    <p>$49.99</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="./image/product2.jpg" alt="Product 2" />
+                    <h3>Boho Dress</h3>
+                    <p>$59.99</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="./image/product3.jpg" alt="Product 3" />
+                    <h3>Streetwear Hoodie</h3>
+                    <p>$69.99</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="./image/product4.jpg" alt="Product 4" />
+                    <h3>Chunky Sneakers</h3>
+                    <p>$89.99</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="./image/product5.jpg" alt="Product 5" />
+                    <h3>Retro Glasses</h3>
+                    <p>$19.99</p>
+                </div>
+
+                <!-- Add more cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="lookbook-section">
+        <h2 class="section-title">👗 Lookbook / Lifestyle</h2>
+        <div class="lookbook-grid">
+
+            <!-- Look 1 -->
+            <div class="look-item large">
+                <img src="/image/look1.jpg" alt="Lookbook 1" />
+                <div class="look-overlay">
+                    <h3>Urban Chic</h3>
+                    <p>Street-inspired. Bold statements.</p>
+                </div>
+            </div>
+
+            <!-- Look 2 -->
+            <div class="look-item">
+                <img src="/image/look2.jpg" alt="Lookbook 2" />
+                <div class="look-overlay">
+                    <h3>Summer Breeze</h3>
+                    <p>Effortless elegance in linen.</p>
+                </div>
+            </div>
+
+            <!-- Look 3 -->
+            <div class="look-item">
+                <img src="/image/look3.jpg" alt="Lookbook 3" />
+                <div class="look-overlay">
+                    <h3>Night Luxe</h3>
+                    <p>Satin, sparkles, and cocktails.</p>
+                </div>
+            </div>
+
+            <!-- Look 4 -->
+            <div class="look-item tall">
+                <img src="/image/look4.jpg" alt="Lookbook 4" />
+                <div class="look-overlay">
+                    <h3>Monochrome Muse</h3>
+                    <p>Black, white & iconic lines.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2>🔥 Flat 40% Off – This Weekend Only!</h2>
+            <div class="countdown" id="countdown">
+                <span><strong id="days">00</strong>d</span>
+                <span><strong id="hours">00</strong>h</span>
+                <span><strong id="minutes">00</strong>m</span>
+                <span><strong id="seconds">00</strong>s</span>
+            </div>
+            <a href="#" class="cta-btn">Grab Deal</a>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2 class="section-title">💬 What They’re Saying</h2>
+        <div class="testimonial-carousel" id="testimonialCarousel">
+
+            <!-- Testimonial 1 -->
+            <div class="testimonial active">
+                <img src="./image/influencer1.jpg" alt="Customer 1" />
+                <p class="quote">"Absolutely obsessed with the new collection. These fits are 🔥!"</p>
+                <h4>@stylequeen</h4>
+                <span class="role">Fashion Influencer</span>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial">
+                <img src="./image/influencer2.jpg" alt="Customer 2" />
+                <p class="quote">"Comfort meets style. I wear them every day!"</p>
+                <h4>@realronnie</h4>
+                <span class="role">Model & Creator</span>
+                <div class="stars">★★★★☆</div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial">
+                <img src="./image/influencer3.jpg" alt="Customer 3" />
+                <p class="quote">"I get compliments every time I step out. Highly recommend!"</p>
+                <h4>@breezywears</h4>
+                <span class="role">Lifestyle Blogger</span>
+                <div class="stars">★★★★★</div>
+            </div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="testimonial-nav">
+            <button class="nav-btn" onclick="prevTestimonial()">←</button>
+            <button class="nav-btn" onclick="nextTestimonial()">→</button>
+        </div>
+    </section>
+
+    <section class="signup-section">
+        <div class="signup-container">
+            <div class="signup-text">
+                <h2>📲 Join Our Fashion Circle</h2>
+                <p>Be the first to know about new arrivals, exclusive drops & 10% off your first order.</p>
+                <form id="signupForm">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required />
+                    <button type="submit">Subscribe</button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
+            </div>
+            <div class="signup-image">
+                <img src="./image/singup.png" alt="App Preview / Newsletter" />
+            </div>
+        </div>
+    </section>
+
+
+    <section class="instagram-section">
+        <div class="insta-header">
+            <h2>✨ Follow Us On Instagram</h2>
+            <a href="https://instagram.com/yourbrand" target="_blank">@yourbrand</a>
+        </div>
+
+        <div class="insta-feed" id="instaFeed">
+            <!-- Example posts -->
+            <div class="insta-post">
+                <img src="./image/insta1..jpg" alt="Outfit 1" />
+                <div class="insta-overlay">
+                    <span>❤️ 1.2k</span>
+                    <p>#OOTD vibes 🔥</p>
+                </div>
+            </div>
+            <div class="insta-post">
+                <img src="./image/insta1.jpg" alt="Outfit 2" />
+                <div class="insta-overlay">
+                    <span>❤️ 890</span>
+                    <p>Weekend slay 🌟</p>
+                </div>
+            </div>
+            <div class="insta-post">
+                <img src="./image/insta3.jpg" alt="Outfit 2" />
+                <div class="insta-overlay">
+                    <span>❤️ 890</span>
+                    <p>Weekend slay 🌟</p>
+                </div>
+            </div>
+            <div class="insta-post">
+                <img src="./image/insta1..jpg" alt="Outfit 2" />
+                <div class="insta-overlay">
+                    <span>❤️ 890</span>
+                    <p>Weekend slay 🌟</p>
+                </div>
+            </div>
+
+            <!-- Add more posts dynamically if needed -->
+        </div>
+
+        <div class="insta-loader" id="instaLoader">
+            <span></span><span></span><span></span>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+      
+          <!-- Column 1: About & Links -->
+          <div class="footer-column">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+      
+          <!-- Column 2: Contact -->
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <p>📍 83 Perera Avanu Colombo</p>
+            <p>📞 +94 77 1898 507</p>
+            <p>✉️ kanoz@gmail.comcom</p>
+            <a href="#">Store Locator</a>
+          </div>
+      
+          <!-- Column 3: Newsletter -->
+          <div class="footer-column">
+            <h4>Newsletter</h4>
+            <form id="newsletterForm">
+              <input type="email" id="newsletterEmail" placeholder="Your email" required />
+              <button type="submit">Subscribe</button>
+              <p id="newsletterMessage" class="newsletter-message"></p>
+            </form>
+            <div class="social-icons">
+              <a href="#" class="social fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social tw" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+      
+          <!-- Column 4: Payments -->
+          <div class="footer-column payment-column">
+            <h4>We Accept</h4>
+            <div class="payment-icons">
+              <img src="./image/visa (1).png" alt="Visa" />
+              <img src="./image/mastercard.png" alt="MasterCard" />
+              <img src="./image/paypal.png" alt="PayPal" />
+              <img src="./image/applepay.png" alt="Apple Pay" />
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">© 2025 Kanoz. All rights reserved.</div>
+      </footer>
+      
+
+    <!-- Page Content (for scroll) -->
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
