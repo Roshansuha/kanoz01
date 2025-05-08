@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Kanoz</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add this to <head> in shop.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+</head>
+
+<body>
+
+    <!-- Navbar (you can copy this from your homepage) -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">Kanoz</div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="New Arrivals.html">New Arrivals</a>
+                <a href="#">Collections</a>
+                <a href="#">Sale</a>
+                <a href="#">Contact</a>
+                <i class="fas fa-heart"></i> <!-- Heart Icon -->
+                <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+                <i class="fas fa-user"></i> <!-- User Icon -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shop Banner -->
+    <section class="shop-banner">
+        <h1>🛍️ Shop All Products</h1>
+        <p>Explore the latest fashion trends!</p>
+    </section>
+    <!-- Filter Buttons -->
+<div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="summer">Summer</button>
+    <button class="filter-btn" data-filter="streetwear">Streetwear</button>
+    <button class="filter-btn" data-filter="luxury">Luxury</button>
+</div>
+
+
+<!-- Product Cards -->
+<section class="product-grid">
+    <div class="product-card summer" data-category="summer">
+        <a href="product.html?productId=1"></a>
+        <img src="./image/product2.jpg" alt="Product 1">">
+        <h3>Summer Dress</h3>
+        <p>$29.99</p>
+        <div class="product-icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
+
+    <div class="product-card streetwear" data-category="streetwear">
+        <img src="./image/product1.jpg" alt="Streetwear Product 1">
+        <h3>Street Hoodie</h3>
+        <p>$49.99</p>
+        <div class="product-icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
+
+    <div class="product-card luxury" data-category="luxury">
+        <img src="./image/product3.jpg" alt="Luxury Product 1">
+        <h3>Luxury Watch</h3>
+        <p>$199.99</p>
+        <div class="product-icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
+    <div class="product-card streetwear" data-category="streetwear">
+        <img src="./image/product1.jpg" alt="Streetwear Product 1">
+        <h3>Street Hoodie</h3>
+        <p>$49.99</p>
+        <div class="product-icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
+
+    <div class="product-card summer" data-category="summer">
+        <img src="./image/product2.jpg" alt="Summer Product 1">
+        <h3>Summer Dress</h3>
+        <p>$29.99</p>
+        <div class="product-icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
+
+</section>
+
+
+    <!-- Add more with appropriate data-category -->
+
+    <!-- Footer (copy this from your homepage) -->
+    <footer class="footer">
+        <div class="footer-bottom">© 2025 Kanoz. All rights reserved.</div>
+    </footer>
+   
+
+    <script src="path/to/your/script.js"></script>
+</body>
+
+</html>

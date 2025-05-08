@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tea Green Crop T-Shirt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="product-container">
+  <div class="product-images">
+    <img id="mainImage" src="./card/card larg .jpg" alt="Main Image" />
+    <div class="thumbnails">
+      <img src="./card/card 1.jpg" onclick="changeImage(this.src)" />
+      <img src="./card/card 2.jpg" onclick="changeImage(this.src)" />
+      <img src="./card/card 3.jpg" onclick="changeImage(this.src)" />
+      <img src="./card/card 4.jpg" onclick="changeImage(this.src)" />
+    </div>
+  </div>
+
+  <div class="product-details">
+    <p class="status">In Stock</p>
+    <h1>Tea Green Color Crop T-Shirt</h1>
+    <p class="ref">Product Ref. 0114166131200</p>
+    <p class="price">Rs.1090.00</p>
+    <p class="color">Color: <span class="color-circle green"></span></p>
+
+    <div class="sizes">
+      <label>Size:</label>
+      <button>10</button>
+      <button>12</button>
+      <button>14</button>
+    </div>
+
+    <div class="quantity">
+      <label>QTY:</label>
+      <button onclick="updateQty(-1)">-</button>
+      <input type="number" id="qty" value="1" min="1" />
+      <button onclick="updateQty(1)">+</button>
+    </div>
+
+    <div class="buttons">
+      <button class="add-cart">ADD TO CART</button>
+      <button class="wishlist">♡ WISHLIST</button>
+    </div>
+
+    <div class="product-info">
+      <h3>PRODUCT DETAILS</h3>
+      <ul>
+        <li>The model’s measurements are: Bust: 32.9, Waist: 27, Hips: 36.5, and Height: 5'10"</li>
+        <li>She is wearing a UK 10 | M size.</li>
+        <li>Actual product appearance may vary from displayed images due to lighting.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

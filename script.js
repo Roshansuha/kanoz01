@@ -1,85 +1,98 @@
-// Navbar background on scroll
-window.addEventListener("scroll", () => {
+document.addEventListener("DOMContentLoaded", function () {
+  // Navbar background on scroll
+  window.addEventListener("scroll", () => {
     const navbar = document.getElementById("navbar");
     navbar.classList.toggle("scrolled", window.scrollY > 10);
-});
+  });
 
-// Search bar toggle
-const searchBox = document.getElementById("searchBox");
-const searchIcon = document.getElementById("searchIcon");
+  // Search bar toggle
+  const searchBox = document.getElementById("searchBox");
+  const searchIcon = document.getElementById("searchIcon");
 
-searchIcon.addEventListener("click", () => {
+  searchIcon.addEventListener("click", () => {
     searchBox.classList.toggle("active");
-});
+  });
 
-// Hamburger menu toggle for mobile
-const hamburgerIcon = document.getElementById("hamburgerIcon");
-const navLinks = document.querySelector(".nav-links");
+  // Hamburger menu toggle for mobile
+  const hamburgerIcon = document.getElementById("hamburgerIcon");
+  const navLinks = document.querySelector(".nav-links");
 
-hamburgerIcon.addEventListener("click", () => {
+  hamburgerIcon.addEventListener("click", () => {
     navLinks.classList.toggle("active");
     hamburgerIcon.classList.toggle("active");
-});
+  });
 
-// Slogan Typing Effect (Starts after page load)
-window.addEventListener('load', function () {
-    let slogans = ["Welcome-to-StyleStore Fashion-that-speaks----  ", "Be Unique, Be You-- "];
-    let sloganElement = document.getElementById("slogan");
-    let currentIndex = 0;
+  // Slogan Typing Effect (Starts after page load)
+  let slogans = ["Welcome-to-StyleStore Fashion-that-speaks----", "Be Unique, Be You--"];
+  let sloganElement = document.getElementById("slogan");
+  let currentIndex = 0;
 
-    // Function to cycle through slogans with typing effect
-    function changeSlogan() {
-        sloganElement.innerText = "";
-        let slogan = slogans[currentIndex];
-        let i = 0;
-        let typingInterval = setInterval(function () {
-            sloganElement.innerText += slogan.charAt(i);
-            i++;
-            if (i > slogan.length) {
-                clearInterval(typingInterval);
-                setTimeout(() => {
-                    currentIndex = (currentIndex + 5) % slogans.length;
-                    changeSlogan();
-                }, 2000); // Wait for 2 seconds before changing the slogan
-            }
-        }, 100); // Typing speed
-    }
+  function changeSlogan() {
+    sloganElement.innerText = "";
+    let slogan = slogans[currentIndex];
+    let i = 0;
+    let typingInterval = setInterval(function () {
+      sloganElement.innerText += slogan.charAt(i);
+      i++;
+      if (i > slogan.length) {
+        clearInterval(typingInterval);
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % slogans.length; // Corrected cycling
+          changeSlogan();
+        }, 2000); // Wait for 2 seconds before changing the slogan
+      }
+    }, 100); // Typing speed
+  }
 
-    changeSlogan();
-});
+  changeSlogan();
 
-document.querySelectorAll('.quick-view').forEach(button => {
+  // Quick view (currently shows alert)
+  document.querySelectorAll('.quick-view').forEach(button => {
     button.addEventListener('click', () => {
-        alert('Quick view feature coming soon!');
-        // Replace with modal trigger or product preview logic
+      alert('Quick view feature coming soon!');
     });
-});
+  });
 
-// Optional: Clone products for smoother infinite scroll
-window.addEventListener('load', () => {
-    const track = document.getElementById("productTrack");
+  // Infinite scroll (optional feature)
+  const track = document.getElementById("productTrack");
+  if (track) {
     const cards = [...track.children];
     cards.forEach(card => {
-        const clone = card.cloneNode(true);
-        track.appendChild(clone);
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
     });
-});
+  }
 
+  // Testimonial Carousel Logic
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll(".testimonial");
 
-document.querySelectorAll('.look-item').forEach(item => {
-    item.addEventListener('click', () => {
-        alert('View full look coming soon!');
-        // You could trigger a modal or link to full look detail page here
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.classList.remove("active");
+      if (i === index) testimonial.classList.add("active");
     });
-});
+  }
 
+  function nextTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+  }
 
-// Set deadline (Sunday of this weekend)
-const deadline = new Date();
-deadline.setDate(deadline.getDate() + (7 - deadline.getDay()));
-deadline.setHours(23, 59, 59, 999);
+  function prevTestimonial() {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentTestimonial);
+  }
 
-function updateCountdown() {
+  // Auto scroll
+  setInterval(nextTestimonial, 7000);
+
+  // Countdown Timer Logic (to Sunday 23:59)
+  const deadline = new Date();
+  deadline.setDate(deadline.getDate() + (7 - deadline.getDay())); // Get next Sunday
+  deadline.setHours(23, 59, 59, 999);
+
+  function updateCountdown() {
     const now = new Date().getTime();
     const t = deadline - now;
 
@@ -92,104 +105,108 @@ function updateCountdown() {
     document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
     document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
     document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-}
-
-// Initial call
-updateCountdown();
-// Update every second
-setInterval(updateCountdown, 1000);
-
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll(".testimonial");
-
-function showTestimonial(index) {
-    testimonials.forEach((testimonial, i) => {
-        testimonial.classList.remove("active");
-        if (i === index) testimonial.classList.add("active");
-    });
-}
-
-function nextTestimonial() {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    showTestimonial(currentTestimonial);
-}
-
-function prevTestimonial() {
-    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-    showTestimonial(currentTestimonial);
-}
-
-// Auto scroll
-setInterval(nextTestimonial, 7000);
-document.getElementById("signupForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = document.getElementById("emailInput").value.trim();
-    const message = document.getElementById("formMessage");
-  
-    if (!email || !validateEmail(email)) {
-      message.textContent = "Please enter a valid email address.";
-      message.style.color = "#dc3545";
-      return;
-    }
-  
-    // Simulate success (you can replace this with AJAX request)
-    message.textContent = "Thank you for subscribing! 🎉";
-    message.style.color = "#28a745";
-    this.reset();
-  });
-  
-  function validateEmail(email) {
-    const re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    return re.test(email.toLowerCase());
   }
-  
-// Simulate lazy-loading (or replace with real Instagram API logic)
-document.addEventListener("DOMContentLoaded", () => {
-    const feed = document.getElementById("instaFeed");
-    const loader = document.getElementById("instaLoader");
-  
-    setTimeout(() => {
-      loader.style.display = "none";
-  
-      // Dynamically add more images
-      const newPosts = [
-        { img: "images/insta3.jpg", likes: "670", caption: "Layered look 🔥" },
-        { img: "images/insta4.jpg", likes: "945", caption: "Soft glam 🎀" },
-      ];
-  
-      newPosts.forEach(post => {
-        const div = document.createElement("div");
-        div.className = "insta-post";
-        div.innerHTML = `
-          <img src="${post.img}" alt="Outfit" />
-          <div class="insta-overlay">
-            <span>❤️ ${post.likes}</span>
-            <p>${post.caption}</p>
-          </div>`;
-        feed.appendChild(div);
-      });
-  
-    }, 2000); // simulate loading delay
-  });
-  
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Newsletter Form (with email validation)
   document.getElementById("newsletterForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const email = document.getElementById("newsletterEmail").value.trim();
     const message = document.getElementById("newsletterMessage");
-  
+
     if (!validateEmail(email)) {
       message.textContent = "❌ Please enter a valid email address.";
       message.style.color = "#dc3545";
       return;
     }
-  
+
     message.textContent = "✅ Subscribed successfully!";
     message.style.color = "#28a745";
     this.reset();
   });
-  
+
   function validateEmail(email) {
     const regex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     return regex.test(email.toLowerCase());
   }
-  
+
+  // Filter logic for products (based on category)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.product-card').forEach(card => {
+        const category = card.dataset.category;
+        if (filter === 'all' || filter === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const products = document.querySelectorAll(".product-card");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Remove 'active' class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      // Add 'active' class to the clicked button
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      products.forEach(product => {
+        const category = product.getAttribute("data-category");
+        if (filter === "all" || filter === category) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const products = document.querySelectorAll(".product-card");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      products.forEach(product => {
+        const category = product.getAttribute("data-category");
+        if (filter === "all" || filter === category) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
+function changeImage(src) {
+  document.getElementById("mainImage").src = src;
+}
+
+function updateQty(change) {
+  const qtyInput = document.getElementById("qty");
+  let currentQty = parseInt(qtyInput.value);
+  if (currentQty + change >= 1) {
+    qtyInput.value = currentQty + change;
+  }
+}
